@@ -17,4 +17,8 @@ if (builder.Environment.IsDevelopment() && builder.Configuration["DOTNET_LAUNCH_
     frontend.WithEnvironment("NODE_TLS_REJECT_UNAUTHORIZED", "0");
 }
 
+builder.AddProject<Projects.ReverseProxy>("reverseproxy")
+    .WithReference(frontend)
+    .WithReference(api);
+
 builder.Build().Run();

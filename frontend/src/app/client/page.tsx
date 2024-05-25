@@ -5,7 +5,8 @@ import { useEffect, useState } from 'react';
 const getData = async () => {
   // NOTE:  WebApi プロジェクトの launchSettings.json ファイル > profiles > http > applicationUrl
   // "applicationUrl": "http://localhost:5291",
-  const weatherData: Response = await fetch('http://localhost:5291/api/weatherforecast', { cache: 'no-cache' })
+  // const weatherData: Response = await fetch('http://localhost:5291/api/weatherforecast', { cache: 'no-cache' })
+  const weatherData: Response = await fetch('/api/weatherforecast', { cache: 'no-cache' })
 
   if(!weatherData.ok) {
     throw new Error('Failed to fetch data.')
